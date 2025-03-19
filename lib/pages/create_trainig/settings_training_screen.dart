@@ -23,22 +23,6 @@ class _SettingsTrainingScreenState extends State<SettingsTrainingScreen> {
     "30 sec",
     "45 sec",
     "60 sec",
-    "1 min 15 sec",
-    "1 min 30 sec",
-    "1 min 45 sec",
-    "2 min",
-    "2 min 15 sec",
-    "2 min 30 sec",
-    "2 min 45 sec",
-    "3 min",
-    "3 min 15 sec",
-    "3 min 30 sec",
-    "3 min 45 sec",
-    "4 min",
-    "4 min 15 sec",
-    "4 min 30 sec",
-    "4 min 45 sec",
-    "5 min",
   ];
   final List<int> approachesOptions = [2, 4, 6, 8];
   final List<int> restTimeOptions = [20, 30, 60];
