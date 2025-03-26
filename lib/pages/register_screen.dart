@@ -3,6 +3,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ios_f_n_nesine_3221/cubit/registed_cubit/register_cubit.dart';
 import 'package:ios_f_n_nesine_3221/main.dart';
 
+import '../splash.dart';
+import 'home_screen.dart';
+
 class RegistrationScreen extends StatelessWidget {
   const RegistrationScreen({super.key});
 
@@ -129,7 +132,7 @@ class RegistrationScreen extends StatelessWidget {
                                       context,
                                       MaterialPageRoute(
                                         builder: (context) =>
-                                            const SplashScreen(),
+                                            const HomeScreen(),
                                       ),
                                     );
                                   }

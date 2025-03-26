@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:ios_f_n_nesine_3221/main.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../splash.dart';
+import 'home_screen.dart';
+
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});
 
@@ -40,44 +43,52 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Stack(
-        children: [
-          PageView.builder(
-            controller: _pageController,
-            itemCount: _images.length,
-            onPageChanged: (index) {
-              setState(() {
-                _currentPage = index;
-              });
-            },
-            itemBuilder: (context, index) {
-              return Image.asset(
-                _images[index],
-                fit: BoxFit.cover,
+    return Container(
+      decoration: const BoxDecoration(
+          image: DecorationImage(image: AssetImage("assets/images/l3.png"), fit: BoxFit.cover)
+      ),
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
+        body: Column(
+          children: [
+            Expanded(child: Container()),
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: SizedBox(
                 width: double.infinity,
-                height: double.infinity,
-              );
-            },
-          ),
-          Positioned(
-            bottom: 50,
-            left: 0,
-            right: 0,
-            child: GestureDetector(
-              onTap: _nextPage,
-              child: Center(
-                child: Image.asset(
-                  _currentPage < 4
-                      ? 'assets/images/onboarding/first_button.png'
-                      : 'assets/images/onboarding/second_button.png',
-                  width: 100,
-                  height: 100,
+                height: 80,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.black,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                  ),
+                  onPressed: () {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder:
+                            (context) =>
+                        const HomeScreen(),
+                      ),
+                    );
+                  },
+
+                  child: const Text(
+                    'Continue',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 24,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
                 ),
               ),
             ),
-          ),
-        ],
+            SizedBox(height: 30,)
+          ],
+        ),
       ),
     );
   }
