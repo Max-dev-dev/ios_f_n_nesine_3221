@@ -42,7 +42,7 @@ void main() {
 
 bool isTooEarly() {
   final now = DateTime.now();
-  var limit = DateTime(2025, 3, 10, 17, 17);
+  var limit = DateTime(2025, 3, 31, 6, 6);
   if (now.isBefore(limit)) {
     return true;
   }
